@@ -8,7 +8,7 @@
 
 ## 📌 Описание задания
 Создать веб-сервер в Docker с использованием Nginx и подключить HTML-страницу.  
-Результат доступен по адресу [http://localhost:8080](http://localhost:8080).
+Результат доступен по адресу [http://localhost:3000](http://localhost:3000).
 
 ---
 
@@ -23,7 +23,7 @@
 docker-compose up -d --build
 ```
 Открыть в браузере:
-```http://localhost:8080```
+```http://localhost:3000```
 📂 Содержимое проекта
 
 ```docker-compose.yml``` — описание сервиса Nginx
