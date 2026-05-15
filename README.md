@@ -9,7 +9,7 @@
 Освоить базовую обработку форм с помощью JavaScript без перезагрузки страницы.
 ⚙️ Как запустить проект
 Клонировать репозиторий:
-git clone //https://github.com/Mishajj39/web/new/lab2
+git clone https://github.com/Mishajj39/web/new/lab2
 cd web
 Запустить контейнеры:
 docker-compose up -d --build
