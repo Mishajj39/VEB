@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подписка на журнал</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Подписка на журнал "Мир технологий"</h1>
+        
+        <form id="subscribeForm">
+            <div class="form-group">
+                <label for="fullname">ФИО:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Иванов Иван Иванович" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Срок подписки:</label>
+                <select id="duration" name="duration">
+                    <option value="1 месяц">1 месяц — 500₽</option>
+                    <option value="3 месяца">3 месяца — 1400₽</option>
+                    <option value="6 месяцев">6 месяцев — 2600₽</option>
+                    <option value="1 год">1 год — 4800₽</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="magazine">Выберите журнал:</label>
+                <select id="magazine" name="magazine">
+                    <option value="Техно-Обзор">Техно-Обзор</option>
+                    <option value="IT Мир">IT Мир</option>
+                    <option value="Наука и Жизнь">Наука и Жизнь</option>
+                    <option value="Код программиста">Код программиста</option>
+                </select>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="digital" name="digital" value="Да">
+                <label for="digital">Электронная версия (доп. 200₽/мес)</label>
+            </div>
+
+            <div class="form-group">
+                <label>Формат оплаты:</label>
+                <div class="radio-group">
+                    <input type="radio" id="card" name="payment" value="Банковская карта" checked>
+                    <label for="card">Банковская карта</label>
+                    
+                    <input type="radio" id="cash" name="payment" value="Наличные">
+                    <label for="cash">Наличные (при получении)</label>
+                    
+                    <input type="radio" id="online" name="payment" value="Электронный кошелек">
+                    <label for="online">Электронный кошелек</label>
+                </div>
+            </div>
+
+            <button type="submit">Оформить подписку</button>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
