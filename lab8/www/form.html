@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оформление подписки</title>
+    <style>
+        body { font-family: Arial; margin: 50px; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin: 5px 0; }
+        input, select { padding: 8px; width: 300px; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Оформление подписки на журнал</h2>
+    <form action="process.php" method="POST">
+        <div class="form-group">
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+            <label>Срок подписки:</label>
+            <select name="subscription_term">
+                <option value="1 месяц">1 месяц</option>
+                <option value="3 месяца">3 месяца</option>
+                <option value="6 месяцев">6 месяцев</option>
+                <option value="12 месяцев">12 месяцев</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Журнал:</label>
+            <select name="magazine">
+                <option value="National Geographic">National Geographic</option>
+                <option value="Forbes">Forbes</option>
+                <option value="Тинькофф Журнал">Тинькофф Журнал</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox" name="digital_version" value="1"> Электронная версия</label>
+        </div>
+        <div class="form-group">
+            <label>Формат оплаты:</label><br>
+            <label><input type="radio" name="payment_format" value="Банковская карта" required> Банковская карта</label><br>
+            <label><input type="radio" name="payment_format" value="Электронные деньги"> Электронные деньги</label><br>
+            <label><input type="radio" name="payment_format" value="Наличные"> Наличные</label>
+        </div>
+        <button type="submit">Оформить</button>
+    </form>
+</body>
+</html>
