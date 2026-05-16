@@ -1,0 +1,52 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: lab9_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./code:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - lab9_network
+
+  php:
+    build: .
+    container_name: lab9_php
+    volumes:
+      - ./code:/var/www/html
+      - ./tests:/var/www/html/tests
+    networks:
+      - lab9_network
+
+  db:
+    image: mysql:8.0
+    container_name: lab9_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: lab9_db
+      MYSQL_USER: lab9_user
+      MYSQL_PASSWORD: lab9_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - lab9_network
+
+  adminer:
+    image: adminer
+    container_name: lab9_adminer
+    ports:
+      - "8081:8080"
+    networks:
+      - lab9_network
+
+volumes:
+  db_data:
+
+networks:
+  lab9_network:
+    driver: bridge
