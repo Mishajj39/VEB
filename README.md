@@ -36,7 +36,7 @@ docker-compose up -d --build
 
 Открытие php страницы: http://localhost:8080
 
-Открытие HTML Формы (9 вариант): http://localhost:8080/form.html
+Открытие HTML Формы: http://localhost:8080/form.html
 
 📂 Содержимое проекта
 docker-compose.yml — описание сервиса Nginx
