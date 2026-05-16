@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление подписки на журнал</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], select { width: 100%; padding: 8px; box-sizing: border-box; }
+        .checkbox-group, .radio-group { margin: 10px 0; }
+        .radio-group label { display: inline-block; margin-right: 15px; font-weight: normal; }
+        button { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .error { color: red; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>📰 Оформление подписки на журнал</h2>
+    <form action="process.php" method="POST" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Срок подписки:</label>
+            <select name="subscription_term" required>
+                <option value="">Выберите срок</option>
+                <option value="1 месяц">1 месяц</option>
+                <option value="3 месяца">3 месяца</option>
+                <option value="6 месяцев">6 месяцев</option>
+                <option value="12 месяцев">12 месяцев</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Журнал:</label>
+            <select name="magazine" required>
+                <option value="">Выберите журнал</option>
+                <option value="National Geographic">National Geographic</option>
+                <option value="Forbes">Forbes</option>
+                <option value="Тинькофф Журнал">Тинькофф Журнал</option>
+                <option value="Вокруг света">Вокруг света</option>
+            </select>
+        </div>
+
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" name="digital_version" value="1">
+                📱 Электронная версия
+            </label>
+        </div>
+
+        <div class="radio-group">
+            <label>Формат оплаты:</label><br>
+            <label><input type="radio" name="payment_format" value="Банковская карта" required> 💳 Банковская карта</label>
+            <label><input type="radio" name="payment_format" value="Электронные деньги"> 💰 Электронные деньги</label>
+            <label><input type="radio" name="payment_format" value="Наличные при получении"> 💵 Наличные при получении</label>
+        </div>
+
+        <button type="submit">Оформить подписку</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const radios = document.getElementsByName('payment_format');
+            let radioSelected = false;
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    radioSelected = true;
+                    break;
+                }
+            }
+            if (!radioSelected) {
+                alert('Пожалуйста, выберите формат оплаты');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
