@@ -12,22 +12,32 @@
 ⚙️ Как запустить проект
 
 Клонировать репозиторий: git clone https://github.com/Mishajj39/web 
+
 cd web/lab6
 
 Запустить контейнеры: docker-compose up -d --build
 
 Открыть в браузере (9 вариант): Сайт: http://localhost:8080
 
+
 📂 Содержимое проекта
 
 docker-compose.yml	#Оркестрация 4 контейнеров: PHP, Redis, Elasticsearch, ClickHouse
+
 Dockerfile	#Сборка PHP-контейнера с расширениями и Composer
+
 composer.json	#Управление зависимостями (Guzzle, Predis)
+
 ClientFactory.php	#Фабрика для создания HTTP-клиента Guzzle
+
 RedisExample.php	#Кеширование погодных данных в Redis (TTL 1 час)
+
 ElasticExample.php	#Индексация и поиск прогнозов погоды
+
 ClickhouseExample.php	#CRUD-операции с погодными данными: создание таблицы, вставка, выборка, статистика
+
 index.php	#Точка входа, демонстрация работы всех трёх БД
+
 
 
 ✅ Результат
