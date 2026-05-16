@@ -1,0 +1,11 @@
+{
+    "name": "yourname/spaceflight-news",
+    "description": "Spaceflight News Subscription",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
